@@ -7,3 +7,5 @@ References :
 https://stackoverflow.com/questions/10585780/android-java-form-validation
 
 http://www.deboma.com/article/mobile-development/5/android-datepicker-and-age-calculation/
+
+https://medium.com/@nikhildhyani365/understand-parcelable-in-android-27ce420d695b
