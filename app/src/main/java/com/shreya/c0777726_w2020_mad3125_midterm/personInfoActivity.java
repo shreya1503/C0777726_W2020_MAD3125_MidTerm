@@ -122,6 +122,79 @@ public class personInfoActivity extends AppCompatActivity
 
     }
 
+    private void fieldIsEmpty()
+    {
+        boolean Flag = false;
+        if(edtSinNumber.getText().toString().isEmpty())
+        {
+            edtSinNumber.setError("Please enter your SIN Number");
+            Flag = true;
+            return;
+        }
+        if(edtFirstName.getText().toString().isEmpty())
+        {
+            edtFirstName.setError("Please enter your first name");
+            Flag = true;
+            return;
+        }
+        if(edtLastName.getText().toString().isEmpty())
+        {
+            edtLastName.setError("Please enter your date of birth");
+            Flag = true;
+            return;
+        }
+        if(edtDOB.getText().toString().isEmpty())
+        {
+            edtDOB.setError("Please enter your date of birth");
+            Flag = true;
+            return;
+        }
+        if(edtGrossIncome.getText().toString().isEmpty())
+        {
+            edtGrossIncome.setError("Please enter your Gross Income");
+            Flag = true;
+            return;
+        }
+        if(edtRRSP.getText().toString().isEmpty())
+        {
+            edtRRSP.setError("Please enter your date of birth");
+            Flag = true;
+            return;
+        }
+
+        if(!Flag)
+        {
+
+            Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
+            Double rrspContribution = Double.parseDouble(edtRRSP.getText().toString());
+            CRACustomer craCustomer = new CRACustomer(edtSinNumber.getText().toString(),
+                    edtFirstName.getText().toString(),
+                    edtLastName.getText().toString(),
+                    edtDOB.getText().toString(),
+                    Double.parseDouble(edtGrossIncome.getText().toString()),
+                    Double.parseDouble(edtRRSP.getText().toString()));
+            Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
+            mIntent.putExtra("CRACustomer", craCustomer);
+            mIntent.putExtra("gender", gender);
+            startActivity(mIntent);
+        }
+    }
+
+    int calculateAge(String date)
+    {
+        Calendar dob = Calendar.getInstance();
+        Calendar today = Calendar.getInstance();
+
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        String agee= String.valueOf(age);
+        Toast.makeText(personInfoActivity.this, agee, Toast.LENGTH_SHORT).show();
+        if(today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)){
+            age--;
+        }
+        return age;
+    }
+
+
 }
 
 
