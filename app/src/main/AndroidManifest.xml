@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.Bridge">
-        <activity android:name=".dataDisplayActivity"></activity>
+        <activity android:name=".personInfoActivity"></activity>
+        <activity android:name=".dataDisplayActivity1" />
         <activity android:name=".Splash_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".personInfoActivity">
     </application>
 
 </manifest>
