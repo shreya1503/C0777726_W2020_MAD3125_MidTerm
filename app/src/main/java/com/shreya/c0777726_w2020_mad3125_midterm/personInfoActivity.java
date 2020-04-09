@@ -11,8 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.content.DialogInterface;
 import android.text.format.Time;
 import android.text.format.DateFormat;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.shreya.c0777726_w2020_mad3125_midterm.R;
 import com.shreya.c0777726_w2020_mad3125_midterm.CRACustomer;
 
@@ -168,22 +171,44 @@ public class personInfoActivity extends AppCompatActivity
 
         if(!Flag)
         {
+            int ageFlag = 0;
+            if(calculateAge(edtDOB.getText().toString())<18)
+            {
+                ageFlag = 1;
+                btnCalculate.setEnabled(false);
+            }
 
             Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
             Double rrspContribution = Double.parseDouble(edtRRSP.getText().toString());
-            CRACustomer craCustomer = new CRACustomer(edtSinNumber.getText().toString(),
-                    edtFirstName.getText().toString(),
-                    edtLastName.getText().toString(),
-                    edtDOB.getText().toString(),
-                    Double.parseDouble(edtGrossIncome.getText().toString()),
-                    Double.parseDouble(edtRRSP.getText().toString()),edtTaxFiledDate.toString());
 
-            Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
-            mIntent.putExtra("CRACustomer", craCustomer);
-            mIntent.putExtra("gender", gender);
-            mIntent.putExtra("age",getCurrentDate());
-            mIntent.putExtra("filedDate", taxFiledDate);
-            startActivity(mIntent);
+            if(ageFlag == 1)
+            {
+                new MaterialAlertDialogBuilder(personInfoActivity.this)
+                        .setTitle("You are below 18 years old. Not Eligible for Tax paying")
+                        .setMessage("Please enter a valid Birth date")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+            }
+            else {
+                CRACustomer craCustomer = new CRACustomer(edtSinNumber.getText().toString(),
+                        edtFirstName.getText().toString(),
+                        edtLastName.getText().toString(),
+                        edtDOB.getText().toString(),
+                        Double.parseDouble(edtGrossIncome.getText().toString()),
+                        Double.parseDouble(edtRRSP.getText().toString()), edtTaxFiledDate.toString());
+
+                Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
+                mIntent.putExtra("CRACustomer", craCustomer);
+                mIntent.putExtra("gender", gender);
+                mIntent.putExtra("age", getCurrentDate());
+                mIntent.putExtra("filedDate", taxFiledDate);
+                startActivity(mIntent);
+            }
         }
     }
 
@@ -193,7 +218,7 @@ public class personInfoActivity extends AppCompatActivity
         Calendar today = Calendar.getInstance();
 
         int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
-        String agee= String.valueOf(age);
+        String agee = String.valueOf(age);
         Toast.makeText(personInfoActivity.this, agee, Toast.LENGTH_SHORT).show();
         if(today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)){
             age--;
