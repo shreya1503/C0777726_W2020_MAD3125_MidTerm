@@ -3,6 +3,7 @@ package com.shreya.c0777726_w2020_mad3125_midterm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import java.util.Date;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
