@@ -7,29 +7,20 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class CRACustomer implements Parcelable {
+public class CRACustomer implements Parcelable
+{
+    private String sinNumber;
+    private String firstName;
+    private String lastName;
+    private String fullName;
+    private String personGender;
+    private Date dateOfBirth, filingTaxDate;
+    private double fedTax, provTax;
+    private double rrspCarryForward;
+    private double grossIncome;
+    private double rrspContribution;
+    private double totalEI;
+    private double totalTaxableAmount;
+    private double totalTaxPaid;
 
-    protected CRACustomer(Parcel in) {
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
-        @Override
-        public CRACustomer createFromParcel(Parcel in) {
-            return new CRACustomer(in);
-        }
-
-        @Override
-        public CRACustomer[] newArray(int size) {
-            return new CRACustomer[size];
-        }
-    };
 }
