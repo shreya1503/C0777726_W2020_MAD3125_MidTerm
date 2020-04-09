@@ -110,7 +110,8 @@ public class CRACustomer implements Parcelable
         return rrspCarryForward;
     }
 
-    public void setRrspCarryForward(double rrspCarryForward) {
+    public void setRrspCarryForward(double rrspCarryForward)
+    {
         this.rrspCarryForward = rrspCarryForward;
     }
 
@@ -126,7 +127,8 @@ public class CRACustomer implements Parcelable
         return rrspContribution;
     }
 
-    public void setRrspContribution(double rrspContribution) {
+    public void setRrspContribution(double rrspContribution)
+    {
         this.rrspContribution = rrspContribution;
     }
 
@@ -142,7 +144,8 @@ public class CRACustomer implements Parcelable
         return totalTaxableAmount;
     }
 
-    public void setTotalTaxableAmount(double totalTaxableAmount) {
+    public void setTotalTaxableAmount(double totalTaxableAmount)
+    {
         this.totalTaxableAmount = totalTaxableAmount;
     }
 
@@ -154,5 +157,64 @@ public class CRACustomer implements Parcelable
         this.totalTaxPaid = totalTaxPaid;
     }
 
+    protected CRACustomer(Parcel parcel)
+    {
+        sinNumber = parcel.readString();
+        firstName = parcel.readString();
+        lastName = parcel.readString();
+        fullName = parcel.readString();
+        personGender = parcel.readString();
+        provTax = parcel.readDouble();
+        fedTax = parcel.readDouble();
+        rrspCarryForward = parcel.readDouble();
+        grossIncome = parcel.readDouble();
+        rrspContribution = parcel.readDouble();
+        totalEI = parcel.readDouble();
+        totalTaxableAmount = parcel.readDouble();
+        totalTaxPaid = parcel.readDouble();
+
+    }
+
+    public static final Parcelable.Creator<CRACustomer> CREATOR = new Parcelable.Creator<CRACustomer>() {
+        @Override
+        public CRACustomer createFromParcel(Parcel parcel) {
+            return new CRACustomer(parcel);
+        }
+
+        @Override
+        public CRACustomer[] newArray(int size) {
+            return new CRACustomer[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags)
+    {
+        dest.writeString(sinNumber);
+        dest.writeString(firstName);
+        dest.writeString(lastName);
+        dest.writeString(fullName);
+        dest.writeString(personGender);
+        dest.writeDouble(fedTax);
+        dest.writeDouble(provTax);
+        dest.writeDouble(rrspCarryForward);
+        dest.writeDouble(grossIncome);
+        dest.writeDouble(rrspContribution);
+        dest.writeDouble(totalEI);
+        dest.writeDouble(totalTaxableAmount);
+        dest.writeDouble(totalTaxPaid);
+    }
+
+    public String amountFormatter()
+    {
+        NumberFormat nf = NumberFormat.getInstance(new Locale("en", "US"));
+        String val = nf.format("$" + this);
+        return val;
+    }
 
 }
