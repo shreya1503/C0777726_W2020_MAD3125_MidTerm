@@ -53,6 +53,75 @@ public class personInfoActivity extends AppCompatActivity
     final int year = calendar.get(Calendar.YEAR);
     String gender=null;
 
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edtFirstName = findViewById(R.id.txtFirstName);
+        edtLastName = findViewById(R.id.txtLastName);
+        edtSinNumber = findViewById(R.id.txtSinNumber);
+        rdGender = findViewById(R.id.rdGrpGender);
+        rbtnMale = findViewById(R.id.rdMale);
+        rbtnFemale = findViewById(R.id.rdFeMale);
+        rbtnOther = findViewById(R.id.rdOther);
+        edtGrossIncome = findViewById(R.id.txtGrossIncome);
+        edtRRSP =findViewById(R.id.txtRrsp);
+        edtDOB = findViewById(R.id.txtBirthDate);
+        edtTaxFiledDate = findViewById(R.id.txtTaxFillDate);
+
+
+        btnCalculate = findViewById(R.id.btnCalculate);
+        edtTaxFiledDate.setText(new StringBuilder()
+                .append(day).append(" ").append("-").append(month + 1).append("-")
+                .append(year));
+
+        edtDOB.setInputType(InputType.TYPE_NULL);
+        edtDOB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // date picker dialog
+                picker = new DatePickerDialog(personInfoActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                edtDOB.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
+
+        rdGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if(i == R.id.rdMale){
+                    gender = rbtnMale.getText().toString();
+                }else if(i == R.id.rdFeMale){
+                    gender = rbtnFemale.getText().toString();
+                }else {
+                    gender = rbtnOther.getText().toString();
+                }
+            }
+
+        });
+
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fieldIsEmpty();
+                //Intent mIntent = new Intent(PersonInfoActivity.this, DataDisplayActivity.class);
+                //startActivity(mIntent);
+            }
+        });
+
+    }
+
 }
 
 
