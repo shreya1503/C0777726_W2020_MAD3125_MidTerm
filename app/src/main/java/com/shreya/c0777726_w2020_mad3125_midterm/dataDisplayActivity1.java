@@ -93,7 +93,11 @@ public class dataDisplayActivity1 extends AppCompatActivity
         }
 
         // Calculation for Taxable income
-        totalTaxPaid = grossIncome - (cpp + ei + rrsp);
+        if(maxRRSP < rrsp)
+        {
+            taxableIncome = grossIncome - (cpp + ei + maxRRSP);
+        }
+
         lblTaxableIncome.setText(String.format("%.2f",totalTaxPaid));
 
         // Calculation for Federal tax
