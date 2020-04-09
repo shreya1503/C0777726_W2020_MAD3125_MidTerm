@@ -129,86 +129,52 @@ public class personInfoActivity extends AppCompatActivity
 
     }
 
-    private void fieldIsEmpty()
-    {
+    private void fieldIsEmpty() {
         boolean Flag = false;
-        if(edtSinNumber.getText().toString().isEmpty())
-        {
+        if (edtSinNumber.getText().toString().isEmpty()) {
             edtSinNumber.setError("Please enter your SIN Number");
             Flag = true;
             return;
         }
-        if(edtFirstName.getText().toString().isEmpty())
-        {
+        if (edtFirstName.getText().toString().isEmpty()) {
             edtFirstName.setError("Please enter your first name");
             Flag = true;
             return;
         }
-        if(edtLastName.getText().toString().isEmpty())
-        {
+        if (edtLastName.getText().toString().isEmpty()) {
             edtLastName.setError("Please enter your last name");
             Flag = true;
             return;
         }
-        if(edtDOB.getText().toString().isEmpty())
-        {
+        if (edtDOB.getText().toString().isEmpty()) {
             edtDOB.setError("Please enter your date of birth");
             Flag = true;
             return;
         }
-        if(edtGrossIncome.getText().toString().isEmpty())
-        {
+        if (edtGrossIncome.getText().toString().isEmpty()) {
             edtGrossIncome.setError("Please enter your Gross Income");
             Flag = true;
             return;
         }
-        if(edtRRSP.getText().toString().isEmpty())
-        {
+        if (edtRRSP.getText().toString().isEmpty()) {
             edtRRSP.setError("Please enter your RRSP");
             Flag = true;
             return;
         }
 
-        if(!Flag)
-        {
-            int ageFlag = 0;
-            if(calculateAge(edtDOB.getText().toString())<18)
-            {
-                ageFlag = 1;
-                btnCalculate.setEnabled(false);
-            }
-
+        if (!Flag) {
             Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
             Double rrspContribution = Double.parseDouble(edtRRSP.getText().toString());
-
-            if(ageFlag == 1)
-            {
-                new MaterialAlertDialogBuilder(personInfoActivity.this)
-                        .setTitle("You are below 18 years old. Not Eligible for Tax paying")
-                        .setMessage("Please enter a valid Birth date")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .show();
-            }
-            else {
-                CRACustomer craCustomer = new CRACustomer(edtSinNumber.getText().toString(),
-                        edtFirstName.getText().toString(),
-                        edtLastName.getText().toString(),
-                        edtDOB.getText().toString(),
-                        Double.parseDouble(edtGrossIncome.getText().toString()),
-                        Double.parseDouble(edtRRSP.getText().toString()), edtTaxFiledDate.toString());
-
-                Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
-                mIntent.putExtra("CRACustomer", craCustomer);
-                mIntent.putExtra("gender", gender);
-                mIntent.putExtra("age", getCurrentDate());
-                mIntent.putExtra("filedDate", taxFiledDate);
-                startActivity(mIntent);
-            }
+            CRACustomer craCustomer = new CRACustomer(edtSinNumber.getText().toString(),
+                    edtFirstName.getText().toString(), edtLastName.getText().toString(),
+                    edtDOB.getText().toString(), edtTaxFiledDate.toString(), Double.parseDouble(edtGrossIncome.getText().toString()),
+                    Double.parseDouble(edtRRSP.getText().toString()));
+            Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
+            mIntent.putExtra("CRACustomer", craCustomer);
+            mIntent.putExtra("gender", gender);
+            mIntent.putExtra("age", getCurrentDate());
+            mIntent.putExtra("filedDate", taxFiledDate);
+            startActivity(mIntent);
         }
     }
 
