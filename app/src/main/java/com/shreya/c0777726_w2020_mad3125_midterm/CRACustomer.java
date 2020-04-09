@@ -59,7 +59,7 @@ public class CRACustomer implements Parcelable
     }
 
     public String getFull_name() {
-        return getFirstName()+getLastName();
+        return getFirstName()+" "+getLastName();
     }
 
     public void setFull_name(String full_name) {
