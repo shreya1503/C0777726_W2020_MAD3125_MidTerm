@@ -182,6 +182,7 @@ public class personInfoActivity extends AppCompatActivity
             mIntent.putExtra("CRACustomer", craCustomer);
             mIntent.putExtra("gender", gender);
             mIntent.putExtra("age",getCurrentDate());
+            mIntent.putExtra("filedDate", taxFiledDate);
             startActivity(mIntent);
         }
     }
