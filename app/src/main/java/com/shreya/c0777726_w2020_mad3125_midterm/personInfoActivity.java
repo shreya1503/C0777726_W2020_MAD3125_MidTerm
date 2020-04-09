@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.text.format.Time;
 import android.text.format.DateFormat;
 import com.shreya.c0777726_w2020_mad3125_midterm.R;
 import com.shreya.c0777726_w2020_mad3125_midterm.CRACustomer;
@@ -180,7 +181,7 @@ public class personInfoActivity extends AppCompatActivity
             Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
             mIntent.putExtra("CRACustomer", craCustomer);
             mIntent.putExtra("gender", gender);
-            mIntent.putExtra("date",getCurrentDate);
+            mIntent.putExtra("date",getCurrentDate());
             startActivity(mIntent);
         }
     }
@@ -199,6 +200,18 @@ public class personInfoActivity extends AppCompatActivity
         return age;
     }
 
+    public String getCurrentDate()
+    {
+
+        Time time = new Time();
+        time.setToNow();
+        time.month = time.month + 1;
+
+        String date = String.valueOf(time.year) + "-"
+                + String.valueOf(time.month) + "-"
+                + String.valueOf(time.monthDay);
+        return date;
+    }
 
 
 
