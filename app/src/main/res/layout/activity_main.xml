@@ -43,13 +43,21 @@
                 android:layout_marginBottom="-50dp"
                 app:srcCompat="@drawable/tax" />
 
+            <com.google.android.material.textview.MaterialAutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="400dp"
+                android:text="TAX CALCULATOR"
+                android:textAlignment="center"
+                android:textColor="#314532"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/txtSinNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
                 android:hint="SIN Number "
@@ -169,9 +177,9 @@
                 android:layout_below="@+id/txtRrsp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="133dp"
-                android:layout_marginTop="43dp"
-                android:layout_marginEnd="148dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="150dp"
                 android:gravity="center"
                 android:text="CALCULATE" />
 
