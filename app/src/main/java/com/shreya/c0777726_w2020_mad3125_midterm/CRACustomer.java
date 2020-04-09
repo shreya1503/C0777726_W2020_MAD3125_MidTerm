@@ -25,10 +25,11 @@ public class CRACustomer implements Parcelable
     private double totalTaxPaid;
 
 
-    public CRACustomer(String sinNumber, String firstName, String lastName, String personGender, String grossIncome, double rrspContribution, double filingTaxDate)
+    public CRACustomer(String sinNumber, String firstName, String lastName, String personGender, double grossIncome, double rrspContribution, String filingTaxDate)
     {
         this.sinNumber = sinNumber;
         this.firstName = firstName;
+        this.lastName = lastName;
         this.personGender = personGender;
         this.grossIncome = grossIncome;
         this.rrspContribution = rrspContribution;
