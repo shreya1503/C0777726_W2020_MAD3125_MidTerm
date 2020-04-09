@@ -176,7 +176,7 @@ public class personInfoActivity extends AppCompatActivity
                     edtLastName.getText().toString(),
                     edtDOB.getText().toString(),
                     Double.parseDouble(edtGrossIncome.getText().toString()),
-                    Double.parseDouble(edtRRSP.getText().toString()));
+                    Double.parseDouble(edtRRSP.getText().toString()),edtTaxFiledDate.toString());
 
             Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
             mIntent.putExtra("CRACustomer", craCustomer);
