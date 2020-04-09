@@ -181,7 +181,7 @@ public class personInfoActivity extends AppCompatActivity
             Intent mIntent = new Intent(personInfoActivity.this, dataDisplayActivity1.class);
             mIntent.putExtra("CRACustomer", craCustomer);
             mIntent.putExtra("gender", gender);
-            mIntent.putExtra("date",getCurrentDate());
+            mIntent.putExtra("age",getCurrentDate());
             startActivity(mIntent);
         }
     }

@@ -30,7 +30,7 @@ public class dataDisplayActivity1 extends AppCompatActivity
         setContentView(R.layout.activity_data_display1);
         lblSin = findViewById(R.id.lblSinNumber);
         lblFullName = findViewById(R.id.lblFullName);
-        lblBirthDate = findViewById(R.id.lblBirthDate);
+        //lblBirthDate = findViewById(R.id.lblBirthDate);
         lblAge = findViewById(R.id.lblAge);
         lblGender = findViewById(R.id.lblGender);
         lblTaxFilingDate = findViewById(R.id.txtTaxFillDate);
