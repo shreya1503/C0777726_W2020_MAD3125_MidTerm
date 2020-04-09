@@ -97,6 +97,10 @@ public class dataDisplayActivity1 extends AppCompatActivity
         {
             taxableIncome = grossIncome - (cpp + ei + maxRRSP);
         }
+        else if(maxRRSP > rrsp)
+        {
+            taxableIncome = grossIncome - (cpp + ei + rrsp);
+        }
 
         lblTaxableIncome.setText(String.format("%.2f",totalTaxPaid));
 
