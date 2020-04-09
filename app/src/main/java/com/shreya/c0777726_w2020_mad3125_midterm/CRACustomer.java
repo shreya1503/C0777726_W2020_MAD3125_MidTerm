@@ -14,7 +14,8 @@ public class CRACustomer implements Parcelable
     private String lastName;
     private String fullName;
     private String personGender;
-    private Date dateOfBirth, filingTaxDate;
+    private Date dateOfBirth;
+    private String filingTaxDate;
     private double fedTax, provTax;
     private double rrspCarryForward;
     private double grossIncome;
@@ -24,13 +25,14 @@ public class CRACustomer implements Parcelable
     private double totalTaxPaid;
 
 
-    public CRACustomer(String sinNumber, String firstName, String lastName, String personGender, double grossIncome, double rrspContribution)
+    public CRACustomer(String sinNumber, String firstName, String lastName, String personGender, double grossIncome, double rrspContribution, String filingTaxDate)
     {
         this.sinNumber = sinNumber;
         this.firstName = firstName;
         this.personGender = personGender;
         this.grossIncome = grossIncome;
         this.rrspContribution = rrspContribution;
+        this.filingTaxDate = filingTaxDate;
 
     }
 
@@ -82,11 +84,11 @@ public class CRACustomer implements Parcelable
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Date getFilingTaxDate() {
+    public String getFilingTaxDate() {
         return filingTaxDate;
     }
 
-    public void setFilingTaxDate(Date filingTaxDate) {
+    public void setFilingTaxDate(String filingTaxDate) {
         this.filingTaxDate = filingTaxDate;
     }
 
