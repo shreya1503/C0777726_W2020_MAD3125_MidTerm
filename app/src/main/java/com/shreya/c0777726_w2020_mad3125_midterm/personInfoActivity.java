@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import com.shreya.c0777726_w2020_mad3125_midterm.R;
+import com.shreya.c0777726_w2020_mad3125_midterm.CRACustomer;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
