@@ -7,6 +7,19 @@
     android:background="#033505"
     tools:context=".dataDisplayActivity1">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="600dp"
+        android:gravity="center_horizontal"
+        android:text="TAX CALCULATOR "
+        android:textColor="#B8FA73"
+        android:textSize="30dp" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
