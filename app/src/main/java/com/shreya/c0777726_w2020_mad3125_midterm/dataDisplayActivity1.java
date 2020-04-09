@@ -78,6 +78,8 @@ public class dataDisplayActivity1 extends AppCompatActivity
         rrsp = customer.getRrspContribution();
         double maxRRSP = (grossIncome * 0.18); //18%
 
+        rrsp = customer.getRrspContribution();
+
         rrspCarryFwd = maxRRSP - rrsp ;
 
         if(rrspCarryFwd < 0)
