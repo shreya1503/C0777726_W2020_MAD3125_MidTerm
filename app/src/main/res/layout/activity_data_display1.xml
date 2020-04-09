@@ -1,126 +1,397 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".dataDisplayActivity1">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#98B198"
-        tools:context=".dataDisplayActivity1">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="400dp"
+                android:layout_height="730dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="#9DC59E"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="80dp">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="1000dp"
-            android:text="TAX SUMMATION"
-            android:textColor="#264307"
-            android:textColorHighlight="#07550B"
-            android:textColorHint="#06554D"
-            android:textColorLink="#385E10"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtfullName"
-            android:layout_width="393dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="750dp"
-            android:background="#505503"
-            android:backgroundTint="#DAECC7"
-            android:text="FULL NAME"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Full Name  :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="393dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="650dp"
-            android:background="#505503"
-            android:backgroundTint="#DAECC7"
-            android:text="BIRTH DATE"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtGender"
-            android:layout_width="393dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="550dp"
-            android:background="#505503"
-            android:backgroundTint="#DAECC7"
-            android:text="GENDER"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtAge"
-            android:layout_width="393dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="450dp"
-            android:background="#505503"
-            android:backgroundTint="#DAECC7"
-            android:text="AGE"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/txtGrossIncome"
-            android:layout_width="393dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="250dp"
-            android:background="#505503"
-            android:backgroundTint="#DAECC7"
-            android:text="GROSS INCOME"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/lblFullName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="SIN Number :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblSinNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Birth Date  :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblBirthDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Age :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Gender :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Tax Filling Date  :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblTaxFillDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Gross Income :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblGrossIncome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Federal Tax :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblFederalTax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Provincial Tax  :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblProvincialTax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text=" CPP :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblCpp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="EI :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblEi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="RRSP Contributed :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblRrsContributed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Carry Forward RRSP :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblCarryRrs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Total Taxable Income :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblTotalTaxIncome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1"
+                            android:padding="5dp"
+                            android:text="Total Tax Payed :"
+                            android:textColor="#2E3C2F"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/lblTaxPayed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="2"
+                            android:layout_marginLeft="10dp"
+                            android:padding="5dp"
+                            android:textColor="#0C0C0C"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
