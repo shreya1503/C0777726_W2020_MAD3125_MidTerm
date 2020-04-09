@@ -91,8 +91,8 @@ public class dataDisplayActivity1 extends AppCompatActivity
         }
 
         // Calculation for Taxable income
-        taxableIncome = grossIncome - (cpp + ei + rrsp);
-        lblTaxableIncome.setText(String.format("%.2f",taxableIncome));
+        totalTaxPaid = grossIncome - (cpp + ei + rrsp);
+        lblTaxableIncome.setText(String.format("%.2f",totalTaxPaid));
 
         // Calculation for Federal tax
         double calculateFederal = calculateFedralTax();
